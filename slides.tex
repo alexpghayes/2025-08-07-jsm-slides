@@ -72,10 +72,10 @@
 
 \hypersetup{colorlinks,allcolors=black}
 
-\title{Understanding linear regression for social networks}
-\date{August 7, 2025 @ Joint Statistical Meetings 2025}
-\author{Alex Hayes}
+\title{Peer effects in the linear-in-means model may be inestimable even when identified}
 
+\author{Alex Hayes}
+\date{Joint Statistical Meetings 2025}
 \institute{Department of Statistics\\University of Wisconsin-Madison}
 
 \begin{document}
@@ -167,18 +167,13 @@
     }
 \end{frame}
 
-\begin{frame}{Linear-in-means models are closely connected to spatial autoregression models}
-    \centering
-    \includegraphics[height=0.95\textheight]{./figures/oregon_map.png}
-\end{frame}
-
 \begin{frame}{Identification in the linear-in-means model can be subtle}
     \centering
     \includegraphics[height=0.95\textheight, page=2, trim={0 14cm 0 0}, clip]{./papers/manski.pdf}
 \end{frame}
 
 
-\begin{frame}{Linear-in-means models are famously suspectible to perfect collinearity}
+\begin{frame}{Linear-in-means models are famously susceptible to perfect collinearity}
     \begin{minipage}{0.49\textwidth}
         \centering
         \begin{tikzpicture}
@@ -388,7 +383,7 @@
     \underline{Sometimes can't distinguish between base rate $\textcolor{BrickRed}{\alpha}$ and interference $\textcolor{BrickRed}{\delta}$}
 \end{frame}
 
-\begin{frame}{In simulations, we couldn't estimate $\textcolor{BrickRed}{\beta}$ either}
+\begin{frame}{In simulations, we couldn't estimate $\textcolor{BrickRed}{\bm \beta}$ either}
     \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{./figures/simulations/jobtalk-mse.pdf}
@@ -589,7 +584,7 @@
     \vspace{4mm}
     
     \begin{block}{Takeaway 1}
-        When nodal covariates are independent of the network, we show that peer effects may not be estimable, due to collinearity, even when there are many open triangles.
+        When nodal covariates are independent of the network, peer effects may not be estimable, due to collinearity, even when there are many open triangles.
     \end{block}
     
     \vspace{4mm}
@@ -597,17 +592,6 @@
     \begin{block}{Takeaway 2}
         Direct effects are estimable even when there is asymptotic collinearity.
     \end{block}
-\end{frame}
-
-\begin{frame}{Why hasn't the spatial econometrics literature encountered this issue before?}
-    
-    \begin{enumerate}
-        \item Often treat covariates $T$ and network $G$ as fixed rather than random
-        \item Theory directly assumes there is no asymptotic collinearity
-        \item Simulations rarely investigate consistency of estimators
-    \end{enumerate}
-    % \vspace{4mm}
-    % More recent causal work has explicitly leveraged asymptotic collinearity in random graphs to estimate direct effects \citep{li2022f}
 \end{frame}
 
 \begin{frame}{The interference literature is well-aware of issues with Bernoulli designs}
@@ -695,9 +679,6 @@
     
     \vspace{4mm}
     \textbf{General low-rank networks}: if $\mathbb E[ A_{ij} \mid X ] = X_i^T X_j$, a similar result holds, broadly generalizing the partial identification result
-    
-    \vspace{4mm}
-    Explains \textcolor{BrickRed}{counterintuitive} simulations in \cite{paul2022}; had to drop intercept column to avoid asymptotic collinearity!
 \end{frame}
 
 \begin{frame}{We performed a simulation study to confirm the theoretical results}
@@ -733,14 +714,6 @@
     \end{block}
 \end{frame}
 
-
-\begin{frame}{Open questions about linear-in-means models}
-    
-    Is asymptotic collinearity an issue in \textbf{longitudinal models} of peer effects like \cite{zhu2017, mcfowland2021, katsouris2024}? \\
-    \vspace{8mm}
-    Can asymptotic collinearity be avoided via additional assumptions on the \textbf{error covariance} $\varepsilon$, as in \cite{rose2017}? 
-\end{frame}
-
 \begin{frame}{Thank you! Questions?}
     \footnotesize \phantom{test} \normalsize
     \begin{columns}
@@ -758,7 +731,7 @@
     \end{columns}
     \footnotesize
     \begin{block}{Pre-print}
-        Alex Hayes and Keith Levin. “Peer Effects in the Linear-in-Means Model May Be Inestimable Even When Identified.” arXiv, October 14, 2024. \url{http://arxiv.org/abs/2410.10772}.
+        Alex Hayes and Keith Levin. ``Peer Effects in the Linear-in-Means Model May Be Inestimable Even When Identified.'' arXiv, October 14, 2024. \url{http://arxiv.org/abs/2410.10772}.
     \end{block}
 \end{frame}
 
