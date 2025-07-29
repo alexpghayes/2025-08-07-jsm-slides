@@ -1,25 +1,19 @@
 #import "@preview/touying:0.6.1": *
 #import themes.metropolis: *
 
+// need to install fontawesome icons in font. see https://typst.app/universe/package/fontawesome/
+#import "@preview/fontawesome:0.5.0": *
 #import "@preview/numbly:0.1.0": numbly
-
-// #config-info(
-//   title: [Title],
-//   subtitle: [Subtitle],
-//   author: [Authors],
-//   date: datetime.today(),
-//   institution: [Institution],
-// )
 
 #show: metropolis-theme.with(
   aspect-ratio: "16-9",
   footer: [#text(size: 0.9em)[github.com/alexpghayes/2025-08-07-jsm-slides]],
+  footer-progress: false,
   config-info(
-    title: [Peer effects in the linear-in-means model may be inestimable even when identified],
+    title: [Peer effects in the linear-in-means model may be\ inestimable even when identified],
     author: [Alex Hayes],
     date: "August 7, 2025",
-    institution: [University of Wisconsin-Madison],
-    // logo: emoji.city,
+    institution: [Joint Statistical Meetings \ Nashville, Tennessee],
   ),
   config-colors(
     primary: rgb("#eb811b"),
@@ -38,10 +32,25 @@
 
 
 // want: institutional logo, time estimate, link to slides?
-#title-slide()
+#title-slide(extra: align(bottom)[
+  #image("./figures/logos/STATSCHOCO_color-center.png", width: 60%)
+])
 
-#slide()[
-  pictures of collaborators go here
+#slide(title: "cats")[
+  #text([Peer effects in the linear-in-means model may be inestimable even when identified], weight: "semibold")
+]
+
+#slide(title: "This talk is based on joint work with Keith Levin")[
+
+  #align(center)[
+    #image("./figures/keith.jpg", width: 20%)
+
+    #image("./figures/logos/STATSCHOCO_color-center.png", width: 55%)
+  ]
+  #align(center)[
+    // #image("./figures/color-flush-UWlogo-print.pdf", width: 30%)
+  ]
+
 ]
 
 #slide(title: "Where we're going")[
@@ -75,9 +84,10 @@ some stuff goes here
 
     [
       #set list(marker: none)
-      - #emoji.mail #link("mailto:alex.hayes@wisc.edu")[alex.hayes\@wisc.edu]
-      - #emoji.computer #link("https://www.alexpghayes.com")[alexpghayes.com]
-      - #emoji.computer #link("https://github.com/alexpghayes")[github.com/alexpghayes]
+      - #fa-icon("envelope") #link("mailto:alex.hayes@wisc.edu")[alex.hayes\@wisc.edu]
+      - #fa-icon("newspaper") #link("https://www.alexpghayes.com")[alexpghayes.com]
+      - #fa-icon("github") #link("https://github.com/alexpghayes")[github.com/alexpghayes]
+      - #fa-icon("bluesky") #link("https://bsky.app/profile/alexpghayes.com")[\@alexpghayes.com]
     ],
 
     [
